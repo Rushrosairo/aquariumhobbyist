@@ -1,0 +1,2276 @@
+<html>
+<head><title>Wet-Pets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		
+	@media all and (orientation: landscape) {
+   // Styles for landscape mode.
+
+
+
+		{
+  box-sizing: border-box;
+}
+
+
+	body {
+  margin: var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+  max-inline-size: initial;
+  margin-block-start: var(--metric-box-spacing);
+}
+@media (min-width: 50em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: var(--metric-box-spacing);
+  background-color: hsl(200deg 70% 95%);
+  font-size: 1.4em;
+}
+
+main {
+  min-height: calc(100vh - 7em);
+}
+
+article {
+  background-color: hsl(60deg 70% 95%);
+}
+
+aside {
+  background-color: hsl(0deg 70% 95%);
+}
+
+article,
+aside {
+  padding: var(--metric-box-spacing);
+  margin: var(--metric-box-spacing);
+}
+
+footer {
+  padding: calc(var(--metric-box-spacing) / 2);
+  background-color: hsl(200deg 70% 95%);
+}
+
+p {
+  margin-block-start: var(--metric-box-spacing);
+}
+
+
+
+@media (min-width: 50em) and (min-height: 60em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+		body {
+  			background-color: #AFE1AF;
+			}
+
+			@media print {
+ 				 body {
+  					  background-color: transparent;
+ 					 }
+				}
+
+
+		.vertical-menu {
+ 		 width: 200px;
+		}
+
+		.vertical-menu a {
+ 		 background-color: #eee;
+ 		 color: black;
+  		 display: block;
+ 		 padding: 12px;
+ 		 text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #93C572;
+		}
+
+		.vertical-menu a.active {
+ 		 background-color: #93C572;
+ 		 color: white;
+		}
+		
+		.Div1 {
+		 background-color: #00A36C;
+
+		}
+
+		.Div4 {
+		 background-color: #00A36C;
+		}
+
+
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1em;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #AFE1AF;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+.column, input[type=reset] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+}
+
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #8fbc8f;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color:#AFE1AF ;
+  }
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: 1b4d3e;}
+
+* {
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	@media all and (orientation: portrait) {
+   // Styles for portrait mode.
+
+
+			{
+  			box-sizing: border-box;
+			}
+
+
+
+
+	body {
+  margin: var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+  max-inline-size: initial;
+  margin-block-start: var(--metric-box-spacing);
+}
+@media (min-width: 50em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: var(--metric-box-spacing);
+  background-color: hsl(200deg 70% 95%);
+  font-size: 1.4em;
+}
+
+main {
+  min-height: calc(100vh - 7em);
+}
+
+article {
+  background-color: hsl(60deg 70% 95%);
+}
+
+aside {
+  background-color: hsl(0deg 70% 95%);
+}
+
+article,
+aside {
+  padding: var(--metric-box-spacing);
+  margin: var(--metric-box-spacing);
+}
+
+footer {
+  padding: calc(var(--metric-box-spacing) / 2);
+  background-color: hsl(200deg 70% 95%);
+}
+
+p {
+  margin-block-start: var(--metric-box-spacing);
+}
+
+
+
+
+@media (min-width: 50em) and (min-height: 60em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+		body {
+  			background-color: #AFE1AF;
+			}
+
+			@media print {
+ 				 body {
+  					  background-color: transparent;
+ 					 }
+				}
+
+
+		.vertical-menu {
+ 		 width: 200px;
+		}
+
+		.vertical-menu a {
+ 		 background-color: #eee;
+ 		 color: black;
+  		 display: block;
+ 		 padding: 12px;
+ 		 text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #93C572;
+		}
+
+		.vertical-menu a.active {
+ 		 background-color: #93C572;
+ 		 color: white;
+		}
+		
+		.Div1 {
+		 background-color: #00A36C;
+
+		}
+
+		.Div4 {
+		 background-color: #00A36C;
+		}
+
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1em;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #AFE1AF;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+.column, input[type=reset] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #8fbc8f;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: 1b4d3e;}
+
+.left {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@media (min-width: 400px) {
+ 	 // Styles for viewports wider than 400 pixels.
+
+
+			{
+  			box-sizing: border-box;
+			}
+
+
+
+		body {
+  margin: var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+  max-inline-size: initial;
+  margin-block-start: var(--metric-box-spacing);
+}
+@media (min-width: 50em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: var(--metric-box-spacing);
+  background-color: hsl(200deg 70% 95%);
+  font-size: 1.4em;
+}
+
+main {
+  min-height: calc(100vh - 7em);
+}
+
+article {
+  background-color: hsl(60deg 70% 95%);
+}
+
+aside {
+  background-color: hsl(0deg 70% 95%);
+}
+
+article,
+aside {
+  padding: var(--metric-box-spacing);
+  margin: var(--metric-box-spacing);
+}
+
+footer {
+  padding: calc(var(--metric-box-spacing) / 2);
+  background-color: hsl(200deg 70% 95%);
+}
+
+p {
+  margin-block-start: var(--metric-box-spacing);
+}
+
+
+
+
+@media (min-width: 50em) and (min-height: 60em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+		body {
+  			background-color: #AFE1AF;
+			}
+
+			@media print {
+ 				 body {
+  					  background-color: transparent;
+ 					 }
+				}
+
+
+		.vertical-menu {
+ 		 width: 200px;
+		}
+
+		.vertical-menu a {
+ 		 background-color: #eee;
+ 		 color: black;
+  		 display: block;
+ 		 padding: 12px;
+ 		 text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #93C572;
+		}
+
+		.vertical-menu a.active {
+ 		 background-color: #93C572;
+ 		 color: white;
+		}
+		
+		.Div1 {
+		 background-color: #00A36C;
+
+		}
+
+		.Div4 {
+		 background-color: #00A36C;
+		}
+
+
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1em;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #AFE1AF;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+.column, input[type=reset] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #8fbc8f;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: 1b4d3e;}
+
+.left {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@media (max-width: 400px) {
+  // Styles for viewports narrower than 400 pixels.
+
+
+			{
+  			box-sizing: border-box;
+			}
+
+
+
+
+	body {
+  margin: var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+  max-inline-size: initial;
+  margin-block-start: var(--metric-box-spacing);
+}
+@media (min-width: 50em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: var(--metric-box-spacing);
+  background-color: hsl(200deg 70% 95%);
+  font-size: 1.4em;
+}
+
+main {
+  min-height: calc(100vh - 7em);
+}
+
+article {
+  background-color: hsl(60deg 70% 95%);
+}
+
+aside {
+  background-color: hsl(0deg 70% 95%);
+}
+
+article,
+aside {
+  padding: var(--metric-box-spacing);
+  margin: var(--metric-box-spacing);
+}
+
+footer {
+  padding: calc(var(--metric-box-spacing) / 2);
+  background-color: hsl(200deg 70% 95%);
+}
+
+p {
+  margin-block-start: var(--metric-box-spacing);
+}
+
+
+
+
+@media (min-width: 50em) and (min-height: 60em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+		body {
+  			background-color: #AFE1AF;
+			}
+
+			@media print {
+ 				 body {
+  					  background-color: transparent;
+ 					 }
+				}
+
+
+		.vertical-menu {
+ 		 width: 200px;
+		}
+
+		.vertical-menu a {
+ 		 background-color: #eee;
+ 		 color: black;
+  		 display: block;
+ 		 padding: 12px;
+ 		 text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #93C572;
+		}
+
+		.vertical-menu a.active {
+ 		 background-color: #93C572;
+ 		 color: white;
+		}
+		
+		.Div1 {
+		 background-color: #00A36C;
+
+		}
+
+		.Div4 {
+		 background-color: #00A36C;
+		}
+
+
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1em;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #AFE1AF;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+.column, input[type=reset] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #8fbc8f;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: 1b4d3e;}
+
+.left {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #AFE1AF;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@media (min-width: 50em) and (max-width: 60em) {
+  // Styles for viewports wider than 50em and narrower than 60em.
+
+	
+					{
+  			box-sizing: border-box;
+			}
+
+
+
+
+	body {
+  margin: var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+  max-inline-size: initial;
+  margin-block-start: var(--metric-box-spacing);
+}
+@media (min-width: 50em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: var(--metric-box-spacing);
+  background-color: hsl(200deg 70% 95%);
+  font-size: 1.4em;
+}
+
+main {
+  min-height: calc(100vh - 7em);
+}
+
+article {
+  background-color: hsl(60deg 70% 95%);
+}
+
+aside {
+  background-color: hsl(0deg 70% 95%);
+}
+
+article,
+aside {
+  padding: var(--metric-box-spacing);
+  margin: var(--metric-box-spacing);
+}
+
+footer {
+  padding: calc(var(--metric-box-spacing) / 2);
+  background-color: hsl(200deg 70% 95%);
+}
+
+p {
+  margin-block-start: var(--metric-box-spacing);
+}
+
+
+
+@media (min-width: 50em) and (min-height: 60em) {
+  article {
+    column-count: 2;
+  }
+}
+
+
+		body {
+  			background-color: #AFE1AF;
+			}
+
+			@media print {
+ 				 body {
+  					  background-color: transparent;
+ 					 }
+				}
+
+
+		.vertical-menu {
+ 		 width: 200px;
+		}
+
+		.vertical-menu a {
+ 		 background-color: #eee;
+ 		 color: black;
+  		 display: block;
+ 		 padding: 12px;
+ 		 text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #93C572;
+		}
+
+		.vertical-menu a.active {
+ 		 background-color: #93C572;
+ 		 color: white;
+		}
+		
+		.Div1 {
+		 background-color: #00A36C;
+
+		}
+
+		.Div4 {
+		 background-color: #00A36C;
+		}
+
+
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1em;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #AFE1AF;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+	.column, input[type=reset] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  t o {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #8fbc8f;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: 1b4d3e;}
+
+
+
+	}
+
+	</style>
+
+
+</head>
+<body>
+
+<div style="overflow:auto">	<header>
+ 	<div class="Div1">
+		
+		
+		<center><h1 style="font-size:4vw">Aquarium Hobbyist</h1></center>
+		
+	</div></header>
+	
+	<div class="slideshow-container">
+
+		<div class="mySlides">
+  			<q>Fish are friends, not food.</q>
+  			<p class="author"> ― Finding Nemo</p>
+		</div>
+
+		<div class="mySlides">
+ 			 <q>No good fish goes anywhere without a porpoise.</q>
+ 			 <p class="author">- Lewis Carroll</p>
+		</div>
+
+		<div class="mySlides">
+			  <q>A fish tank is just interactive television for cats.</q>
+ 			 <p class="author">- Oliver Gaspirt</p>
+		</div>
+
+		<div class="mySlides">
+  			<q>If there is magic on this planet, it’s contained in water.</q>
+  			<p class="author"> ― Lorene Eisley</p>
+		</div>
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a>
+			<a class="next" onclick="plusSlides(1)">❯</a>
+
+		</div>
+			
+		<div class="dot-container">
+			  <span class="dot" onclick="currentSlide(1)"></span> 
+			  <span class="dot" onclick="currentSlide(2)"></span> 
+			  <span class="dot" onclick="currentSlide(3)"></span> 
+			  <span class="dot" onclick="currentSlide(4)"></span> 
+		</div>
+
+
+	<main>
+	<table>
+	<article>
+	<tr>
+	<td><br><br>
+	<div class="vertical-menu">
+  		<a href="#" class="active">Home</a>
+  		<a href="file:///C:/Users/Rushmi%20Rosairo/Desktop/WEB%20PROGR/ASSESSMENT%2003_%20website/bettafish.html">Betta fish</a>
+  		<a href="file:///C:/Users/Rushmi%20Rosairo/Desktop/WEB%20PROGR/ASSESSMENT%2003_%20website/Dwarf_Shrimp.html">Dwarf Shrimp</a>
+  		<a href="file:///C:/Users/Rushmi%20Rosairo/Desktop/WEB%20PROGR/ASSESSMENT%2003_%20website/Pea%20Puffers.html">Pea Puffers</a>
+  		<a href="file:///C:/Users/Rushmi%20Rosairo/Desktop/WEB%20PROGR/ASSESSMENT%2003_%20website/Plants.html">Plants</a>
+	</div>
+	</td><td>
+		<div class="b1">
+		<br>
+		
+		
+		<p style="font-size:1vw">
+			Aquarium hobbyists have a passion for keeping fish and other aquatic life in a home aquarium. They enjoy learning about the different species, tank maintenance, and the joy of watching their fish swim and interact with each other. 
+			Aquarium hobbyists typically spend time researching the best tank setup, water chemistry, and the type of fish that will thrive in their aquarium. They also need to purchase the right supplies such as aquariums, water pumps, filters, and lighting. As the hobbyist progresses, they may want to add decorations and other items to enhance their aquarium experience.
+		</p>
+		
+
+	
+		<p style="font-size:1vw"> 
+			What sort of fish do you keep? 
+			is one of the first questions we ask guests at Aquarium Fish Depot.
+			 That is how we intend to begin a relationship that will last a 
+			lifetime—not just with us, but also with the pastime and fine art of 
+			fishkeeping. Once you master the fundamentals, it truly is an artistic endeavor.
+
+		</p>
+		<p style="font-size:1vw">
+			You’ve probably heard the saying, 
+			“Give a man a fish and you feed him for a day.
+			 Teach a man to fish and you feed him for a lifetime.” For us,
+			 it goes, “Give a person a fish and they enjoy it for a day, teach 
+			them to raise fish and they become a lifelong hobbyist.”
+	
+			If you ask an aquarist how can they spend hours just staring at
+			 the underwater life in their aquarium, they will answer that there is
+			 something magical about admiring floating fish and waving plants. They won’t be lying. 
+			
+		</p>
+		</article>
+
+		</div>
+	</td>
+	</tr>
+
+	<aside>
+	<tr>
+	<td colspan="2">
+		<div class="div2">
+		
+		<center>
+		
+		<h2 style="font-size:1.3vw">
+			Dont worry. We'll help you while you dive into the world of fishkeeping!
+		</h2>
+		
+		</center>
+		
+		</div>
+		</td>
+		</tr>
+
+		
+		
+		</tr>
+		</table>
+
+
+		<div class="div3">
+			<div class="row">
+  <div class="column">
+			<center>
+			<img src="C:\Users\Rushmi Rosairo\Desktop\WEB PROGR\ASSESSMENT 03_ website\images\Home page 2.jpg" class="responsive" width="700" height="400" style="width:100%">
+		</div>
+  <div class="column">
+			<img src="C:\Users\Rushmi Rosairo\Desktop\WEB PROGR\ASSESSMENT 03_ website\images\download (9).jpg" class="responsive" width="700" height="400" style="width:100%">
+		 </div>
+	<div class="column">
+			<img src="C:\Users\Rushmi Rosairo\Desktop\WEB PROGR\ASSESSMENT 03_ website\images\download (10).jpg" class="responsive" width="700" height="400" style="width:100%"></center>
+		  </div>
+		</div>
+		</div>
+		<hr>
+		
+
+
+
+
+
+		<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Leave us a message or ask a question:</p>
+  </div>
+  <div class="row">
+	
+    <div class="column"><center>
+      </center>
+    </div>
+	
+
+	
+    <div class="column">
+      <form  action="https://formsubmit.co/rushrosairo55@gmail.com" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+	     
+		<option value="sri lanka">Sri Lanka</option>
+          <option value="india">India</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit" onclick="myFunction()">
+			<div id="snackbar">You'r message has been submitted.</div>
+	
+	   <input type="reset" value="Reset" >
+	
+		
+
+      </form>
+    </div>
+	
+
+  </div>
+</div>
+<hr>
+		</aside>
+		</main>
+
+
+		<footer>
+		<div class="Div4" align="center"><br>
+			copy Right©
+			<br>
+			<i>1B3,Horana Rd, Panadura</i><br><br>
+	
+
+		</div>
+		</footer>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script>
+function myFunction() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+
+
+		
+</body>
+</html>
+		
